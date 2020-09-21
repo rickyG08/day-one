@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ricky"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-09-21 02:40:33 PM"/>
+        <attribute name="created" value="cmlja3k7REVTS1RPUC1IMUg5RFBVOzIwMjAtMDktMjE7MDE6MTY6NDkgUE07Mjg5Mw=="/>
+        <attribute name="edited" value="cmlja3k7REVTS1RPUC1IMUg5RFBVOzIwMjAtMDktMjE7MDI6NDA6MzMgUE07NDsyOTk1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="running" type="Boolean" array="False" size=""/>
+            <assign variable="running" expression="true"/>
+            <while expression="running">
+                <declare name="userInput" type="String" array="False" size=""/>
+                <output expression="&quot;Enter a temperature in degreed Celsius (blank to quit).&quot;" newline="True"/>
+                <input variable="userInput"/>
+                <if expression="Len(userInput) &gt; 0">
+                    <then>
+                        <declare name="celsius" type="Real" array="False" size=""/>
+                        <assign variable="celsius" expression="ToReal(userInput)"/>
+                        <output expression="&quot;Temperature in degrees Fahrenheit = &quot;" newline="False"/>
+                        <output expression="celsiusToFahrenheit(celsius)" newline="True"/>
+                    </then>
+                    <else>
+                        <assign variable="running" expression="false"/>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+    <function name="celsiusToFahrenheit" type="Real" variable="fahrenheit">
+        <parameters>
+            <parameter name="celsius" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="fahrenheit" type="Real" array="False" size=""/>
+            <assign variable="fahrenheit" expression="celsius * 9 / 5 + 32"/>
+        </body>
+    </function>
+</flowgorithm>
